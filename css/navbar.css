@@ -1,0 +1,23 @@
+.header {
+    background-color: midnightblue;
+    min-height: 100px;
+    border-bottom: 10px solid black;
+    display: flex;
+    
+    
+}
+
+.row {
+    display:flex;
+    flex-wrap: wrap;
+    
+}
+
+.nav-list-item {
+
+   text-decoration: none;
+
+   margin-right: 20px;
+   margin-top: 20px;
+   list-style: none;
+}
