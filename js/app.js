@@ -8,9 +8,10 @@ let listItem;
 let listValue;
 let listText;
 
+let containerCount =  document.getElementsByClassName("landing__container").length;
 
 
-for (i = 1; i < 8; i++) {
+for (i = 1; i < (containerCount + 1); i++) {
     item = "#section" + i+ "-title"
     itemValue = document.querySelector(item);
     itemText = itemValue.textContent;
