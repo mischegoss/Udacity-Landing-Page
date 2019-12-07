@@ -1,12 +1,11 @@
 
 
-.hidden {
-    display: none;
-}
+
 
 .section-button {
     margin: 0 auto;
-    display: block;
     color: red;
+    display: block;
 
 }
+

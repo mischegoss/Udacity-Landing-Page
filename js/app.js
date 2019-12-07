@@ -21,12 +21,18 @@ for (i = 1; i < (containerCount + 1); i++) {
     
     let itemTarget = document.getElementById("section" + i);
     let listTarget = document.getElementById(listItem);
-   
+    let buttonName = "section" + i + "-button";
+    let buttonToAdd = document.getElementById(buttonName)
+
     
 
     listTarget.addEventListener("click", function(){ 
         itemTarget.scrollIntoView();
         itemTarget.setAttribute("class", "your-active-class");
+        
+        buttonToAdd.innerHTML = "<button class='section-button' onclick='goToTop()'>Return to Top</button>"
+        
+
         
 }
     )}
@@ -36,21 +42,17 @@ function goToTop() {
     console.log(containerCount)
     for (i = 1; i < (containerCount + 1); i++) {
         let elementToCheck = document.getElementById("section"+i);
-        console.log(elementToCheck);
+        let buttonToDelete = document.getElementById("section" + i + "-button");
+        buttonToDelete.innerHTML = "";
+
         if (elementToCheck.classList.contains("your-active-class")) {
-            elementToCheck.classList.remove("your-active-class");
-        }
-        let buttonToCheck = document.getElementById("section"+i+ "-button");
+        elementToCheck.classList.remove("your-active-class");
+    } 
+
+       
+
         
-
-
+        }
     }
 
-   
-       
-  
-
-
-
-
-}
+    
