@@ -24,7 +24,9 @@ for (i = 1; i < (containerCount + 1); i++) {
     let buttonName = "section" + i + "-button";
     let buttonToAdd = document.getElementById(buttonName)
 
-    
+    listTarget.addEventListener("scroll", function() {
+        itemTarget.setAttribute("style", "border: 10px dotted green")
+    })
 
     listTarget.addEventListener("click", function(){ 
         itemTarget.scrollIntoView();
@@ -56,3 +58,21 @@ function goToTop() {
     }
 
     
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {this.addStickyOnOffset()};
+
+// Get the header
+var header = document.getElementById("header");
+console.log(header)
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function addStickyOnOffset() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
