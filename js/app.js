@@ -21,6 +21,8 @@ for (i = 1; i < containerCount + 1; i++) {
   let buttonName = "section" + i + "-button";
   let buttonToAdd = document.getElementById(buttonName);
 
+  //Adds button when scrolls into view
+
   listTarget.addEventListener("click", function() {
     itemTarget.scrollIntoView();
 
@@ -29,6 +31,7 @@ for (i = 1; i < containerCount + 1; i++) {
   });
 }
 
+// On button click, goes to top of page 
 function goToTop() {
   document.documentElement.scrollTop = 0;
 
@@ -39,6 +42,7 @@ function goToTop() {
   }
 }
 
+//Checks if section is in view and adds active-class with moving background and color change
 function checkIfSectionInView() {
   let isInViewport = function(elem) {
     let bounding = elem.getBoundingClientRect();
