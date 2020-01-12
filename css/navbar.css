@@ -28,7 +28,6 @@
   margin: 0 auto;
   color: red;
   display: block;
-
 }
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
@@ -48,10 +47,8 @@
     font-style: bolder;
   }
   .nav-list-item {
-   font-size: 10px;
-  
+    font-size: 10px;
     margin-right: 8px;
     margin-top: 5px;
-   
   }
 }
