@@ -24,19 +24,37 @@ for (i = 1; i < containerCount + 1; i++) {
   //Adds button when scrolls into view
 
   listTarget.addEventListener("click", function() {
-    itemTarget.scrollIntoView();
-
+    itemTarget.scrollIntoView ({
+      behavior: 'smooth'}
+    )
+//Added behavior smooth as per review. There is now a visible scroll
     buttonToAdd.innerHTML =
       "<button class='section-button' onclick='goToTop()'>Return to Top</button>";
   });
 }
 
+
+//Changed from 'document.documentElement.scrollTop = 0' method to a visible scroll to top as per reviewer
+
+
+//This is the helper function for a scroll (I set it a bit slow for visibility)
+const scrollToTop = () => {
+  const scrolling = document.documentElement.scrollTop || document.body.scrollTop;
+  if (scrolling > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, scrolling - scrolling / 50);
+  }
+};
+
+
+
+
+
 // On button click, goes to top of page 
 function goToTop() {
-  document.documentElement.scrollTop = 0;
+scrollToTop();
 
   for (i = 1; i < containerCount + 1; i++) {
-    let elementToCheck = document.getElementById("section" + i);
     let buttonToDelete = document.getElementById("section" + i + "-button");
     buttonToDelete.innerHTML = "";
   }
