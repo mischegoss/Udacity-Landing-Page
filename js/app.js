@@ -47,9 +47,6 @@ const scrollToTop = () => {
 };
 
 
-
-
-
 // On button click, goes to top of page 
 function goToTop() {
 scrollToTop();
@@ -87,6 +84,28 @@ function checkIfSectionInView() {
       },
       false
     );
+  }
+}
+
+//Add sticky header as per review (Used tutorial here: https://www.w3schools.com/howto/howto_js_navbar_sticky.asp)
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("header");
+console.log(navbar)
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+console.log(sticky)
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
   }
 }
 checkIfSectionInView();
